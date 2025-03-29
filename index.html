@@ -8,9 +8,9 @@
 </head>
 
 <body>
-    <h1 id="request">aaaaaaaaaaaaaaa</h1>
-    <h1 id="request2">aaaaaaaaaaaaaaa</h1>
-    <h1 id="request3">aaaaaaaaaaaaaaa</h1>
+    <h1 id="request">1</h1>
+    <h1 id="request2">1</h1>
+    <h1 id="request3">1</h1>
 
     <script>
 
@@ -19,13 +19,12 @@
         window.addEventListener("devicemotion", (event) => {
             console.log(event);
             let request = document.getElementById('request');
-            request.innerHTML = `${event.acceleration.x} ${event.acceleration.y} ${event.acceleration.z}`;
-
             let request2 = document.getElementById('request2');
-            request2.innerHTML = `${event.accelerationIncludingGravity.x} ${event.accelerationIncludingGravity.y} ${event.accelerationIncludingGravity.z}`;
-
             let request3 = document.getElementById('request3');
-            request3.innerHTML = `${event.rotationRate.alpha} ${event.rotationRate.beta} ${event.rotationRate.gamma}`;
+
+            request.innerHTML = `${event.accelerationIncludingGravity.x.toFixed(2)}`;
+            request2.innerHTML = `${event.accelerationIncludingGravity.y.toFixed(2)}`;
+            request3.innerHTML = `${event.accelerationIncludingGravity.z.toFixed(2)}`;
         });
 
     </script>
