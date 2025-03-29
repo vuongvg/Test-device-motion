@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="request">aaaaaaaaaaaaaaa</h1>
+
+    <script>
+
+
+        // Alternatively...
+        window.addEventListener("devicemotion", (event) => {
+            console.log(event);
+            let request = document.getElementById('request');
+            request.innerHTML = `${event.acceleration.x} ${event.acceleration.y} ${event.acceleration.z}`;
+        });
+
+        // // Alternatively...
+        // window.ondevicemotion = (event) => {
+        //     console.log(event);
+
+        //     // Process event.acceleration, event.accelerationIncludingGravity,
+        //     // event.rotationRate and event.interval
+        // };
+    </script>
+</body>
+
+</html>
